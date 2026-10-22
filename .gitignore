@@ -1,0 +1,35 @@
+# Python virtual environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Generated local data
+data/processed/iocs.json
+data/processed/evaluation_metrics.json
+
+# Logs and database exports
+*.log
+*.bson
+*.dump
+*.sqlite3
+
+# Editor files
+.vscode/
+.DS_Store
+# Downloaded MITRE ATT&CK dataset cache
+data/attack/enterprise-attack.json
+
+# Research papers - keep local unless redistribution is permitted
+Research Papers/

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Domain case normalization",
+    "input": {
+      "domains": [
+        "Example.COM",
+        "example.com",
+        "Example.COM.",
+        "test.com"
+      ]
+    },
+    "expected_unique": {
+      "domains": [
+        "example.com",
+        "test.com"
+      ]
+    }
+  },
+  {
+    "name": "Hash case normalization",
+    "input": {
+      "hashes": [
+        "ABCDEF1234567890ABCDEF1234567890",
+        "abcdef1234567890abcdef1234567890",
+        "ABCDEF1234567890ABCDEF1234567890"
+      ]
+    },
+    "expected_unique": {
+      "hashes": [
+        "abcdef1234567890abcdef1234567890"
+      ]
+    }
+  },
+  {
+    "name": "IP duplicate removal",
+    "input": {
+      "ips": [
+        "192.168.1.10",
+        "192.168.1.10",
+        "10.0.0.1",
+        "192.168.1.10"
+      ]
+    },
+    "expected_unique": {
+      "ips": [
+        "192.168.1.10",
+        "10.0.0.1"
+      ]
+    }
+  },
+  {
+    "name": "URL duplicate removal",
+    "input": {
+      "urls": [
+        "https://example.com/a",
+        "https://example.com/a",
+        "https://example.com/b"
+      ]
+    },
+    "expected_unique": {
+      "urls": [
+        "https://example.com/a",
+        "https://example.com/b"
+      ]
+    }
+  },
+  {
+    "name": "Mixed duplicate indicators",
+    "input": {
+      "domains": [
+        "MALWARE.COM",
+        "malware.com",
+        "safe.com"
+      ],
+      "ips": [
+        "8.8.8.8",
+        "8.8.8.8"
+      ],
+      "hashes": [
+        "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    },
+    "expected_unique": {
+      "domains": [
+        "malware.com",
+        "safe.com"
+      ],
+      "ips": [
+        "8.8.8.8"
+      ],
+      "hashes": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    }
+  }
+]
