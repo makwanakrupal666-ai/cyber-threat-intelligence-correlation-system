@@ -28,6 +28,14 @@ PUBLIC CTI SOURCES (21 enabled feeds + single-URL processing)
 
 ## What actually works right now
 
+\## Dashboard Preview
+
+
+
+!\[CTI CORE Dashboard](screenshots/dashboard-overview.png)
+
+
+
 * FastAPI backend with a real, modular pipeline (collectors → extractors →
 normalizers → deduplicators → correlator → enrichment → ATT\&CK mapper →
 priority scorer).
